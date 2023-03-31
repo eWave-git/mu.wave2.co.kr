@@ -2,14 +2,14 @@
 include_once "../connect.php";
 
 $query = "
-    select
-        DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
-        avg(pressure_in) as pressure_in,
-        avg(pressure_out) as pressure_out
-    from ro_jstech
-    where (create_at >= now() - INTERVAL 1 HOUR )
-    group by HOUR(create_at),FLOOR(MINUTE(create_at)/1)*10
-    order by DATE asc ;
+select
+    DATE_FORMAT(create_at, '%m-%d %H:%i') as DATE,
+    data3
+from raw_data
+where
+    address = 991 and board_number = 3    
+    order by DATE desc
+limit 30;
 ";
 $result = mysqli_query($conn, $query);
 $rows = array();
@@ -22,9 +22,9 @@ $pressure_out_arr = array();
 $create_at_arr = array();
 
 foreach ($rows as $k => $v) {
-    array_push($pressure_in_arr, array($k, floor($v['pressure_in'])));
-    array_push($pressure_out_arr, array($k, floor($v['pressure_out'])));
-    array_push($create_at_arr, array($k, substr($v['DATE'],11,5)));
+    array_push($pressure_in_arr, array($k, floor($v['data3'])));
+//    array_push($pressure_out_arr, array($k, floor($v['pressure_out'])));
+    array_push($create_at_arr, array($k, substr($v['DATE'],6,5)));
 }
 
 $pressure_in = array(

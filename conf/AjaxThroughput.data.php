@@ -2,13 +2,14 @@
 include_once "../connect.php";
 
 $query = "
-    select
-	DATE_FORMAT(create_at, '%Y-%m-%d %H:00:00') as DATE,
-        round((sum(water_in)-sum(water_in-water_out)),0) as throughput
-    FROM ro_jstech
-    where (create_at >= now() - INTERVAL 12 HOUR)
-	    group by DATE
-	    order by DATE asc;
+select
+    DATE_FORMAT(create_at, '%m-%d %H:%i') as DATE,
+    data3
+from raw_data
+where
+    address = 991 and board_number = 5    
+order by DATE desc
+limit 30;
 ";
 $result = mysqli_query($conn, $query);
 $rows = array();
@@ -21,7 +22,7 @@ $throughput_arr = array();
 $create_at_arr = array();
 
 foreach ($rows as $k => $v) {
-    array_push($throughput_arr, array($k, floor($v['throughput'])));
+    array_push($throughput_arr, array($k, floor($v['data3'])));
     array_push($create_at_arr, array($k, substr($v['DATE'],11,5)));
 }
 

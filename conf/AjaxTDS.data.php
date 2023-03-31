@@ -3,14 +3,14 @@ include_once "../connect.php";
 
 $query = "
     select
-        DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
-        avg(tds_in) as tds_in,
-        avg(tds_out) as tds_out
-    from ro_jstech
-    where (create_at >= now() - INTERVAL 1 HOUR)
-    group by HOUR(create_at),FLOOR(MINUTE(create_at)/1)*10
-    order by DATE asc ;
-";
+        DATE_FORMAT(create_at, '%m-%d %H:%i') as DATE,
+        data1
+    from raw_data
+    where
+    address = 991 and board_number = 2    
+    order by DATE desc
+    limit 30;
+    ";
 $result = mysqli_query($conn, $query);
 $rows = array();
 while($row = mysqli_fetch_array($result))
@@ -22,9 +22,9 @@ $tds_out_arr = array();
 $create_at_arr = array();
 
 foreach ($rows as $k => $v) {
-    array_push($tds_in_arr, array($k, floor($v['tds_in'])));
-    array_push($tds_out_arr, array($k, floor($v['tds_out'])));
-    array_push($create_at_arr, array($k, substr($v['DATE'],11,5)));
+    array_push($tds_in_arr, array($k, floor($v['data1'])));
+    //array_push($tds_out_arr, array($k, floor($v['tds_out'])));
+    array_push($create_at_arr, array($k, substr($v['DATE'],6,5)));
 }
 
 $tds_in = array(
