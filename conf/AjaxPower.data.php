@@ -2,14 +2,16 @@
 include_once "../connect.php";
 
 $query = "
-    select
-        DATE_FORMAT(create_at, '%Y-%m-%d') as DATE,
-        round(sum(current*380/1000),0) as power
-    FROM ro_jstech
-    where (create_at >= now() - INTERVAL 6 day)
-    group by DATE
-    order by DATE asc;
-";
+   select 
+       DATE_FORMAT(create_at, '%m-%d ') as DATE,
+       (max(data3)-ifnull( LAG(max(data3)) OVER (ORDER BY create_at, idx), 0))*10 as data3
+        from water.raw_data
+        where create_at >= now() - INTERVAL 5 day 
+			and address=101 and board_type=3 and board_number=3
+        group by DATE
+        order by DATE asc
+       ;";
+
 $result = mysqli_query($conn, $query);
 $rows = array();
 while($row = mysqli_fetch_array($result))
@@ -22,7 +24,7 @@ $create_at_arr = array();
 
 foreach ($rows as $k => $v) {
 
-    array_push($power_arr, array($k, floor($v['power'])));
+    array_push($power_arr, array($k, floor($v['data3'])));
     array_push($create_at_arr, array($k, $v['DATE']));
 }
 
