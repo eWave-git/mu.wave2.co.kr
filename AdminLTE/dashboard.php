@@ -19,7 +19,7 @@
         <!-- Small boxes (Stat box) -->
         address = 991 and board_number = 2
         <div class="row">
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
@@ -58,7 +58,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-warning">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
@@ -77,7 +77,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-danger">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
@@ -103,7 +103,7 @@
 
         address = 991 and board_number = 3
         <div class="row">
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
@@ -122,7 +122,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
@@ -142,7 +142,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-warning">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12">
                 <div class="info-box bg-danger">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
@@ -190,7 +190,7 @@
 
 
 
-            <div class="col-lg-12 col-sm-6">
+            <div class="col-lg-12 col-sm-12">
                 <div class="card card-primary card-tabs">
                     <div class="card-header p-0 pt-1">
                         <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
@@ -214,7 +214,7 @@
                             <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
 
                                 <div class="row">
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-6 col-sm-12">
                                         <!-- Line chart -->
                                         <div class="card card-primary card-outline">
                                             <div class="card-header">
@@ -238,7 +238,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-6 col-sm-12">
                                         <!-- Line chart -->
                                         <div class="card card-primary card-outline">
                                             <div class="card-header">
@@ -264,7 +264,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-6 col-sm-12">
                                         <!-- Line chart -->
                                         <div class="card card-primary card-outline">
                                             <div class="card-header">
@@ -288,7 +288,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-6 col-sm-12">
                                         <!-- Line chart -->
                                         <div class="card card-primary card-outline">
                                             <div class="card-header">
@@ -312,6 +312,60 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-12">
+                                        <div class="card card-primary card-outline">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                                    <i class="far fa-chart-bar"></i>
+                                                    전력사용량 기간별 (W)
+                                                </h3>
+
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="power_chart" style="height: 300px;"></div>
+                                            </div>
+                                            <!-- /.card-body-->
+                                        </div>
+                                        <!-- /.card -->
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12">
+                                        <!-- BAR CHART -->
+                                        <div class="card card-primary card-outline">
+                                            <div class="card-header">
+                                                <h3 class="card-title">
+                                                    <i class="far fa-chart-bar"></i>
+                                                    물탱크 수위 (%)
+                                                </h3>
+
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="watertank_chart" style="height: 300px;"></div>
+                                            </div>
+                                            <!-- /.card-body-->
+                                        </div>
+                                        <!-- /.card -->
+                                    </div>
+
+                                </div>
                             </div>
 
 
@@ -334,59 +388,7 @@
 
         </div>
 
-        <div class="row">
-            <div class="col-lg-6 col-sm-6 ">
-                <div class="card card-primary card-outline">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="far fa-chart-bar"></i>
-                            전력사용량 기간별 (W)
-                        </h3>
 
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="power_chart" style="height: 300px;"></div>
-                    </div>
-                    <!-- /.card-body-->
-                </div>
-                <!-- /.card -->
-            </div>
-
-            <div class="col-lg-6 col-sm-6">
-                <!-- BAR CHART -->
-                <div class="card card-primary card-outline">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="far fa-chart-bar"></i>
-                            물탱크 수위 (%)
-                        </h3>
-
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="watertank_chart" style="height: 300px;"></div>
-                    </div>
-                    <!-- /.card-body-->
-                </div>
-                <!-- /.card -->
-            </div>
-
-        </div>
         <!-- /.row (main row) -->
         <?php
             $sql = "select * from control_data  order by create_at desc limit 1";
@@ -411,7 +413,7 @@
             }
         ?>
         <div class="row">
-            <div class="col-lg-6 col-sm-6">
+            <div class="col-lg-6 col-sm-12">
                 <!-- Bootstrap Switch -->
                 <div class="card card-secondary">
                     <div class="card-header">
@@ -516,7 +518,7 @@
                         show: true
                     },
                     points    : {
-                        show: true
+                        show: false
                     }
                 },
                 lines : {
@@ -567,7 +569,7 @@
                         show: true
                     },
                     points    : {
-                        show: true
+                        show: false
                     }
                 },
                 lines : {
@@ -617,7 +619,7 @@
                         show: true
                     },
                     points    : {
-                        show: true
+                        show: false
                     }
                 },
                 lines : {
@@ -667,7 +669,7 @@
                         show: true
                     },
                     points    : {
-                        show: true
+                        show: false
                     }
                 },
                 lines : {
