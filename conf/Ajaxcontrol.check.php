@@ -21,7 +21,7 @@ if ($_REQUEST['relay'] == 'relay1') {
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
 
-    $relay1 = $row1['relay1'];
+    $relay1 = $row['relay1'];
 
     if ($_REQUEST['do_work'] == 'true') {
         $sql = "insert control_data set create_at=now(), address='1122', board_type='4', board_number='3', type='relay2',  relay2='1', relay1='{$relay1}' ";
