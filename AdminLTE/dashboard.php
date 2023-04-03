@@ -391,25 +391,46 @@
 
         <!-- /.row (main row) -->
         <?php
-            $sql = "select * from control_data  order by create_at desc limit 1";
+            $sql = "select * from control_data where type='relay1' order by create_at desc limit 1";
             $result = mysqli_query($conn, $sql);
-            $row = mysqli_fetch_array($result);
+            $row1 = mysqli_fetch_array($result);
 
-            $relay1 = !$row['relay1'] && "" ? 0 : $row['relay1'];
-            $relay2 = !$row['relay2'] && "" ? 0 : $row['relay2'];
+            $relay1 = !$row1['relay1'] && "" ? 0 : $row1['relay1'];
 
-            if ($relay1 == 1 && $relay2 == 1) {
-                $do_str = "작동중";
-                $do_css = "bg-gradient-primary";
-                $do_checked = "checked";
-            } else if ($relay1 == 0 && $relay2 == 0) {
-                $do_str = "멈춤";
-                $do_css = "bg-gradient-danger";
-                $do_checked = "";
+
+            if ($relay1 == 1) {
+                $do_str_1 = "작동중";
+                $do_css_1 = "bg-gradient-primary";
+                $do_checked_1 = "checked";
+            } else if ($relay1 == 0) {
+                $do_str_1 = "멈춤";
+                $do_css_1 = "bg-gradient-danger";
+                $do_checked_1 = "";
             } else {
-                $do_str = "멈춤";
-                $do_css = "bg-gradient-danger";
-                $do_checked = "";
+                $do_str_1 = "멈춤";
+                $do_css_1 = "bg-gradient-danger";
+                $do_checked_1 = "";
+            }
+
+            $sql = "select * from control_data where type='relay2' order by create_at desc limit 1";
+            $result = mysqli_query($conn, $sql);
+            $row2 = mysqli_fetch_array($result);
+
+            $relay2 = !$row2['relay2'] && "" ? 0 : $row2['relay2'];
+
+
+            if ($relay2 == 1) {
+                $do_str_2 = "작동중";
+                $do_css_2 = "bg-gradient-primary";
+                $do_checked_2 = "checked";
+            } else if ($relay2 == 0) {
+                $do_str_2 = "멈춤";
+                $do_css_2 = "bg-gradient-danger";
+                $do_checked_2 = "";
+            } else {
+                $do_str_2 = "멈춤";
+                $do_css_2 = "bg-gradient-danger";
+                $do_checked_2 = "";
             }
         ?>
         <div class="row">
@@ -418,27 +439,28 @@
                 <div class="card card-secondary">
                     <div class="card-header">
                         <h3 class="card-title">시스템 운영</h3>
-                        <button type="button" name="control_button" class="btn btn-block <?php echo $do_css;?> btn-flat btn-sm" style="user-select: auto;"><?php echo $do_str;?></button>
+                        <button type="button" name="control_button_1" class="btn btn-block <?php echo $do_css_1;?> btn-flat btn-sm" style="user-select: auto;"><?php echo $do_str_1;?></button>
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="control_checkbox" <?php echo $do_checked;?> data-bootstrap-switch>
+                        <input type="checkbox" name="control_checkbox_1" <?php echo $do_checked_1;?> data-bootstrap-switch>
 
                     </div>
                 </div>
                 <!-- /.card -->
             </div>
-<!--
-            <div class="col-lg-6 col-sm-6">
+
+            <div class="col-lg-6 col-sm-12">
+                <!-- Bootstrap Switch -->
                 <div class="card card-secondary">
                     <div class="card-header">
-                        <h3 class="card-title">시스템 세척</h3>
+                        <h3 class="card-title">시스템 운영</h3>
+                        <button type="button" name="control_button_2" class="btn btn-block <?php echo $do_css_2;?> btn-flat btn-sm" style="user-select: auto;"><?php echo $do_str_2;?></button>
                     </div>
                     <div class="card-body">
+                        <input type="checkbox" name="control_checkbox_2" <?php echo $do_checked_2;?> data-bootstrap-switch>
 
-                        <input type="checkbox" name="my-checkbox"  checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
                     </div>
-		</div>
--->
+                </div>
                 <!-- /.card -->
             </div>
         </div>
@@ -454,29 +476,29 @@
             $(this).bootstrapSwitch('state', $(this).prop('checked'));
         })
 
-        $("[name='control_checkbox']").on('switchChange.bootstrapSwitch',function (e,data) {
+        $("[name='control_checkbox_1']").on('switchChange.bootstrapSwitch',function (e,data) {
             $.ajax({
                 url: "../conf/Ajaxcontrol.check.php",
                 dataType: 'json',
-                data: {do_work:data},
+                data: {relay:'relay1', do_work:data},
                 success: function (data) {
                     const do_work = data.pay_load.do_work
-                    const do_cip = data.pay_load.do_cip
-                    if (do_work == 1 && do_cip == 0) {
-                        $("[name='control_button']").text('작동중')
 
-                        $("[name='control_button']").addClass("bg-gradient-primary");
-                        $("[name='control_button']").removeClass("bg-gradient-danger");
-                    } else if (do_work == 0 && do_cip == 1) {
-                        $("[name='control_button']").text('멈춤')
+                    if (do_work == 1) {
+                        $("[name='control_button_1']").text('작동중')
 
-                        $("[name='control_button']").addClass("bg-gradient-danger");
-                        $("[name='control_button']").removeClass("bg-gradient-primary");
+                        $("[name='control_button_1']").addClass("bg-gradient-primary");
+                        $("[name='control_button_1']").removeClass("bg-gradient-danger");
+                    } else if (do_work == 0) {
+                        $("[name='control_button_1']").text('멈춤')
+
+                        $("[name='control_button_1']").addClass("bg-gradient-danger");
+                        $("[name='control_button_1']").removeClass("bg-gradient-primary");
                     } else {
-                        $("[name='control_button']").text('멈춤')
+                        $("[name='control_button_1']").text('멈춤')
 
-                        $("[name='control_button']").addClass("bg-gradient-danger");
-                        $("[name='control_button']").removeClass("bg-gradient-primary");
+                        $("[name='control_button_1']").addClass("bg-gradient-danger");
+                        $("[name='control_button_1']").removeClass("bg-gradient-primary");
                     }
                 },
                 error: function () {
@@ -485,6 +507,36 @@
             });
         });
 
+        $("[name='control_checkbox_2']").on('switchChange.bootstrapSwitch',function (e,data) {
+            $.ajax({
+                url: "../conf/Ajaxcontrol.check.php",
+                dataType: 'json',
+                data: {relay:'relay2', do_work:data},
+                success: function (data) {
+                    const do_work = data.pay_load.do_work
+
+                    if (do_work == 1) {
+                        $("[name='control_button_2']").text('작동중')
+
+                        $("[name='control_button_2']").addClass("bg-gradient-primary");
+                        $("[name='control_button_2']").removeClass("bg-gradient-danger");
+                    } else if (do_work == 0) {
+                        $("[name='control_button_2']").text('멈춤')
+
+                        $("[name='control_button_2']").addClass("bg-gradient-danger");
+                        $("[name='control_button_2']").removeClass("bg-gradient-primary");
+                    } else {
+                        $("[name='control_button_2']").text('멈춤')
+
+                        $("[name='control_button_2']").addClass("bg-gradient-danger");
+                        $("[name='control_button_2']").removeClass("bg-gradient-primary");
+                    }
+                },
+                error: function () {
+                    // setTimeout(GetData, updateInterval);
+                }
+            });
+        });
 
         GetTDSData()
 
