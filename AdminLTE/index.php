@@ -34,7 +34,11 @@
 
         <!-- Main content -->
         <?php
-                include_once "dashboard.php";
+        if ($_SESSION['user_type'] == "admin") {
+            include_once "dashboard.php";
+        } else if ($_SESSION['user_type'] == "user") {
+            include_once "user_dashboard.php";
+        }
         ?>
 
 
