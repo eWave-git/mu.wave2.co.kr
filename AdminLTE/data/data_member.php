@@ -94,13 +94,29 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control" id="name" name="name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Type</label>
+                        <div class="col-sm-10">
+<!--                            <input type="text" class="form-control" id="type" name="type">-->
+                            <select class="custom-select rounded-0" id="type" name="type">
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="description"></textarea>
                         </div>
                     </div>
                 </form>

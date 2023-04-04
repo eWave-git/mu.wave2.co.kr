@@ -21,12 +21,14 @@ if ($mode == "select") {
     echo json_encode($response);
 
 } else if ($mode == "create") {
+
     $sql = "SELECT CONCAT('*', UPPER(SHA1(UNHEX(SHA1('{$password}'))))) as pass";
     $result = mysqli_query($conn, $sql);
     $row_p = mysqli_fetch_array($result);
     $password = $row_p['pass'];
+    $description = $description != '' ? $description : "";
 
-    $query = "INSERT INTO `member` SET id='{$id}', name='{$name}', password='{$password}', create_at=now() ";
+    $query = "INSERT INTO `member` SET id='{$id}', name='{$name}', password='{$password}', `type`='{$type}', description='{$description}', create_at=now() ";
     $result = mysqli_query($conn, $query);
 
     if ($result) {
@@ -46,7 +48,7 @@ if ($mode == "select") {
         $sql_sub = ", password='".$password."'";
     }
 
-    $query = "UPDATE `member` SET id='{$id}', name='{$name}' ".$sql_sub." WHERE idx='{$idx}' ";
+    $query = "UPDATE `member` SET id='{$id}', name='{$name}' ".$sql_sub.", `type`='{$type}', description='{$description}' WHERE idx='{$idx}' ";
     $result = mysqli_query($conn, $query);
 
     if ($result) {

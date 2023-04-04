@@ -33,7 +33,14 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <?php include_once "dashboard.php"; ?>
+        <?php
+            if ($_SESSION['user_type'] == "admin") {
+                include_once "dashboard.php";
+            } else if ($_SESSION['user_type'] == "user") {
+                include_once "user_dashboard.php";
+            }
+        ?>
+
 
         <!-- /.content -->
     </div>
