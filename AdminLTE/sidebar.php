@@ -24,14 +24,14 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "member.php") {echo 'active';} ?>  ">
+            <a href="#" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "") {echo 'active';} ?>  ">
                 <i class="nav-icon far fa-address-card"></i>
                 <p>데이터 다운로드</p>
             </a>
         </li>
         <li class="nav-header">관리</li>
         <li class="nav-item">
-            <a href="#" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "member.php") {echo 'active';} ?>  ">
+            <a href="#" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "") {echo 'active';} ?>  ">
                 <i class="nav-icon far fa-address-card"></i>
                 <p>시스템 관리</p>
             </a>
@@ -43,11 +43,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "member.php") {echo 'active';} ?>  ">
+            <a href="alarm.php" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "alarm.php") {echo 'active';} ?>  ">
                 <i class="nav-icon far fa-address-card"></i>
-                <p>알람 설정</p>
+                <p>경보 설정</p>
             </a>
         </li>
+
         <li class="nav-header"><a href="/logout.php">Logout</a></li>
 <!--        <li class="nav-header">Memeber</li>-->
 <!--        <li class="nav-item">-->
