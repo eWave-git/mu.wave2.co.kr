@@ -1,14 +1,14 @@
 <?php
-    $sql = "select * from mush.raw_data where address = 301 and board_number=2 order by create_at desc limit 1";
+    $sql = "select * from mush.raw_data where address = 991 and board_number=2 order by create_at desc limit 1";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
 
-    $sql2 = "select * from mush.raw_data where address = 301 and board_number=3 order by create_at desc limit 1";
+    $sql2 = "select * from mush.raw_data where address = 991 and board_number=3 order by create_at desc limit 1";
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
 
 
-    echo $row['data1'];
+//    echo $row['tds_in'];
 //    echo $row['tds_out'];
 //    echo $row['pressure_in'];
 //    echo $row['pressure_out'];
