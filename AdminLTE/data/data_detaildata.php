@@ -61,9 +61,6 @@
                 <div class="card">
                     <div class="card-body">
                         <div id="_chart" style="height: 900px;"></div>
-<!--                        <canvas id="myChart" style="height: 900px;"></canvas>-->
-<!--                        <button type="button" class="btn btn-block bg-gradient-primary" id="chart_image_download">Chart Download</button>-->
-<!--                        <button type="button" class="btn btn-block bg-gradient-primary" id="excel_image_download">Excel Download</button>-->
                     </div><!-- /.card-body -->
                 </div>
                 <!-- /.card -->
@@ -72,16 +69,6 @@
         </div>
         </form>
         <!-- /.row -->
-
-<!--        <div class="card">-->
-<!--            <div class="card-header">-->
-<!--                <h3 class="card-title">DataTable with default features</h3>-->
-<!--            </div>-->
-<!--            <div class="card-body">-->
-<!--                <table id="example" class="table table-bordered table-striped"></table>-->
-<!--            </div>-->
-<!--        </div>-->
-
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
@@ -93,149 +80,6 @@
 <script>
 
     $(function () {
-        /*
-        $("#geteway").change(function () {
-            if ($(this).val()) {
-                $.ajax({
-                    url:'../conf/dashboardAction.php',
-                    type:'post',
-                    data: {mode:'select_1', select_value:$(this).val()},
-                    dataType: "json",
-                    success:function(obj){
-                        if (obj.pay_load.success == "success") {
-                            if (obj.pay_load.result.nid[0]) {
-                                $("#node option:gt(0)").remove();
-                                $("#sensor option:gt(0)").remove();
-                                obj.pay_load.result.nid.forEach(function (el, index) {
-                                    $('#node').append($('<option>', {
-                                        value: obj.pay_load.result.nid[index],
-                                        text : el+' | node_'+obj.pay_load.result.nid_type[index]
-                                    }));
-                                })
-                            }
-                        }
-                    }
-                })
-            }
-        })
-
-        $("#node").change(function () {
-            if ($(this).val()) {
-                $.ajax({
-                    url:'../conf/dashboardAction.php',
-                    type:'post',
-                    // data: {mode:'select_2', select_value1:$("#geteway").val(), select_value2:$(this).val(), sdateAtedate:$("[name='sdateAtedate']").val(), bun:$("[name='bun']:checked").val()},
-                    data: {mode:'select_2', select_value1:$("#geteway").val(), select_value2:$(this).val()},
-                    dataType: "json",
-                    success:function(obj){
-                        if (obj.pay_load.success == "success") {
-                            console.log(obj.pay_load.result)
-                            if (obj.pay_load.result[0]) {
-                                $("#sensor option:gt(0)").remove();
-                                obj.pay_load.result.forEach(function (el, index) {
-                                    $('#sensor').append($('<option>', {
-                                        value: el,
-                                        text : el
-                                    }));
-                                })
-
-                                // const labels = obj.pay_load.chart_labels
-                                //
-                                // const data = {
-                                //     labels: labels,
-                                //     datasets: obj.pay_load.datasets
-                                // };
-                                //
-                                // const config = {
-                                //     type: 'line',
-                                //     data: data,
-                                //     options: {
-                                //
-                                //     }
-                                // };
-                                //
-                                // const myChart = new Chart(
-                                //     document.getElementById('myChart'),
-                                //     config
-                                // );
-
-
-                            }
-                        }
-                    }
-                })
-            }
-        })
-
-        $("#search").click(function () {
-            let select_value1 = $("#geteway").val()
-            let select_value2 = $("#node").val()
-            let select_value3 = $("#sensor").val()
-            let sdateAtedate = $("[name='sdateAtedate']").val()
-            let bun = $("[name='bun']:checked").val()
-
-            $.ajax({
-                url:'../conf/dashboardAction.php',
-                type:'post',
-                data: {mode:'search', select_value1:select_value1, select_value2:select_value2, select_value3:select_value3, sdateAtedate:sdateAtedate, bun:bun},
-                dataType: "json",
-                success:function(obj){
-                    if (obj.length < 1) {
-                        alert("error");
-                        return false;
-                    }
-                    if (obj.pay_load.success == "success") {
-                        console.log(obj.pay_load.result)
-                        if (obj.pay_load.result[0]) {
-
-
-                            const labels = obj.pay_load.chart_labels
-
-                            const data = {
-                                labels: labels,
-                                datasets: obj.pay_load.datasets
-                            };
-
-                            const config = {
-                                type: 'line',
-                                data: data,
-                                options: {
-                                    scaleOverlay: false,
-                                }
-                            };
-
-                            const myChart = new Chart(
-                                document.getElementById('myChart'),
-                                config
-                            );
-
-
-                        }
-                    }
-                },
-                error:function (e) {
-                    alert(e);
-                }
-            })
-
-
-        })
-
-        $("#chart_image_download").click(function () {
-            const imageLink = document.createElement('a')
-            const canvas = document.getElementById('myChart')
-            imageLink.download = 'chart.png'
-            imageLink.href = canvas.toDataURL('image/png', 1)
-            imageLink.click()
-        })
-
-        $("#excel_image_download").click(function () {
-            $("#frm").attr("action", "../../conf/excelDownAction.php").submit()
-        })
-
-         */
-
-
         $("#search").click(function () {
 
             if ($("#md_id").val() == "") {
