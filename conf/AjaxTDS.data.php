@@ -7,7 +7,7 @@ $query = "
         data1
     from raw_data
     where
-        address = 991 and board_number = 2 and
+        address = 301 and board_number = 2 and
         create_at >= now() - INTERVAL 1 hour
     order by DATE asc;
     ";

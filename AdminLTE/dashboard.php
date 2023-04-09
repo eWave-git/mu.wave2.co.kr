@@ -17,7 +17,7 @@
 <section class="content">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        address = 991 and board_number = 2
+        송화버섯 농장 
         <div class="row">
             <div class="col-lg-3 col-12">
                 <div class="info-box bg-info">
@@ -101,7 +101,7 @@
         <!-- /.row -->
         <!-- Main row -->
 
-        address = 991 and board_number = 3
+        표고버섯 농장
         <div class="row">
             <div class="col-lg-3 col-12">
                 <div class="info-box bg-info">
@@ -196,7 +196,7 @@
                         <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
                             <li class="pt-2 px-3"><h3 class="card-title">section </h3></li>
                             <li class="nav-item">
-                                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">두람농장</a>
+                                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">송화버섯</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">-</a>
