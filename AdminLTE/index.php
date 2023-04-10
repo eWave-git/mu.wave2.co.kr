@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
 <?php  include_once "../connect.php"; ?>
 <?php  include_once "header.php"; ?>
 <?php // include_once "../conf/router.php"; ?>
