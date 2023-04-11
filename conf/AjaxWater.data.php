@@ -25,7 +25,7 @@ $create_at_arr = array();
 foreach ($rows as $k => $v) {
     array_push($water_in_arr, array($k, floor($v['data3'])));
 //    array_push($water_out_arr, array($k, floor($v['water_out'])));
-    array_push($create_at_arr, array($k, substr($v['DATE'],11,5)));
+    array_push($create_at_arr, array($k, substr($v['DATE'],6,5)));
 }
 
 $water_in = array(

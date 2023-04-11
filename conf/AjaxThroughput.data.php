@@ -4,10 +4,10 @@ include_once "../connect.php";
 $query = "
     select
         DATE_FORMAT(create_at, '%m-%d %H:%i') as DATE,
-        data7
+        data3
     from raw_data
     where
-        address = 301 and board_number = 2  and
+        address = 301 and board_number = 3  and
         create_at >= now() - INTERVAL 1 hour
     order by DATE asc;
     "; 
@@ -23,9 +23,9 @@ $throughput_arr = array();
 $create_at_arr = array();
 
 foreach ($rows as $k => $v) {
-    array_push($throughput_arr, array($k, $v['data7']));
+    array_push($throughput_arr, array($k, $v['data3']));
     //array_push($throughput_arr, array($k, floor($v['data3'])));
-    array_push($create_at_arr, array($k, substr($v['DATE'],11,5)));
+    array_push($create_at_arr, array($k, substr($v['DATE'],6,5)));
 }
 
 $throughput = array(

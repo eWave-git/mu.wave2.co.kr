@@ -1,14 +1,21 @@
 <?php
-    $sql = "select * from mush.raw_data where address = 301 and board_number=2 order by create_at desc limit 1";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($result);
+    $sql1 = "select * from mush.raw_data where address = 301 and board_number=2 order by create_at desc limit 1";
+    $result1 = mysqli_query($conn, $sql1);
+    $row1 = mysqli_fetch_array($result1);
 
     $sql2 = "select * from mush.raw_data where address = 301 and board_number=3 order by create_at desc limit 1";
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
 
+    $sql3 = "select * from mush.raw_data where address = 301 and board_number=2 order by create_at desc limit 1";
+    $result3 = mysqli_query($conn, $sql3);
+    $row3 = mysqli_fetch_array($result3);
 
-    echo $row['data1'];
+    $sql4 = "select * from mush.raw_data where address = 301 and board_number=3 order by create_at desc limit 1";
+    $result4 = mysqli_query($conn, $sql4);
+    $row4 = mysqli_fetch_array($result4);
+
+//    echo $row['data1'];
 //    echo $row['tds_out'];
 //    echo $row['pressure_in'];
 //    echo $row['pressure_out'];
@@ -25,13 +32,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">온도</span>
-                        <span class="info-box-number"><?php echo $row['data1'];?> °C</span>
+                        <span class="info-box-number"><?php echo $row1['data1'];?> °C</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data1'];?>%"></div>
+                            <div class="progress-bar" style="width: <?php echo $row1['data1'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?> <!-- ($row['create_at'],11,8) -->
+                            조회 시점 : <?php echo substr($row1['create_at'],5,11);?> <!-- ($row['create_at'],11,8) -->
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -44,13 +51,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">습도</span>
-                        <span class="info-box-number"><?php echo $row['data2'];?> %</span>
+                        <span class="info-box-number"><?php echo $row1['data2'];?> %</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data2'];?>%"></div>
+                            <div class="progress-bar" style="width: <?php echo $row1['data2'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($ro1['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -64,13 +71,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">이산화탄소</span>
-                        <span class="info-box-number"><?php echo $row['data3'];?> ppm </span>
+                        <span class="info-box-number"><?php echo $row1['data3'];?> ppm </span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data3'];?> %"></div>
+                            <div class="progress-bar" style="width: <?php echo $row1['data3'];?> %"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row1['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -83,13 +90,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">조도</span>
-                        <span class="info-box-number"><?php echo $row['data4'];?> lux</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data4'];?>"></div>
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -109,13 +116,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">온도</span>
-                        <span class="info-box-number"><?php echo $row2['data1'];?> °C</span>
+                        <span class="info-box-number"><?php echo $row3['data1'];?> °C</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data1'];?>%"></div>
+                            <div class="progress-bar" style="width: <?php echo $row3['data1'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?> <!-- ($row2['create_at'],11,8) -->
+                            조회 시점 : <?php echo substr($row3['create_at'],5,11);?> <!-- ($row2['create_at'],11,8) -->
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -128,13 +135,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">습도</span>
-                        <span class="info-box-number"><?php echo $row2['data2'];?> %</span>
+                        <span class="info-box-number"><?php echo $row3['data2'];?> %</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data2'];?>%"></div>
+                            <div class="progress-bar" style="width: <?php echo $row3['data2'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row3['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -148,13 +155,13 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">이산화탄소</span>
-                        <span class="info-box-number"><?php echo $row2['data3'];?> ppm </span>
+                        <span class="info-box-number"><?php echo $row3['data3'];?> ppm </span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?> %"></div>
+                            <div class="progress-bar" style="width: <?php echo $row3['data3'];?> %"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row3['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -166,14 +173,14 @@
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
-                        <span class="info-box-text">조도</span>
-                        <span class="info-box-number"><?php echo $row2['data4'];?> lux</span>
+                        <span class="info-box-text">PAR</span>
+                        <span class="info-box-number"><?php echo $row4['data2'];?> µmol/m^2/s</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data4'];?>"></div>
+                            <div class="progress-bar" style="width: <?php echo $row4['data4'];?>"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row4['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -199,10 +206,10 @@
                                 <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">송화버섯</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">-</a>
+                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">-</a>
+                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>
@@ -294,7 +301,7 @@
                                             <div class="card-header">
                                                 <h3 class="card-title">
                                                     <i class="far fa-chart-bar"></i>
-                                                    조도 변화량 (lux)
+                                                    조도 변화량 (µmol/m^2/s)
                                                 </h3>
 
                                                 <div class="card-tools">
