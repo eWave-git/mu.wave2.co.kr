@@ -57,7 +57,7 @@
                             <div class="progress-bar" style="width: <?php echo $row1['data2'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($ro1['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row1['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
