@@ -1,24 +1,5 @@
 <?php
 include_once "../connect.php";
-
-foreach ($_REQUEST as $k => $v) {
-    $$k = $v;
-}
-
-if ($md_id && $sensor && $sdateAtedate) {
-
-    $s = explode(" - ",$sdateAtedate );
-    $sdate = $s[0]." 00:00:00";
-    $edate = $s[1]." 23:59:59";
-
-
-
-
-
-}
-
-
-
 ?>
 
 
@@ -28,7 +9,7 @@ if ($md_id && $sensor && $sdateAtedate) {
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form id="frm" name="frm" action="/AdminLTE/downloaddata.php"  method="get">
+        <form id="frm" name="frm" action="/conf/downloadAction.php"  method="get">
             <div class="row">
                 <div class="col-md-2">
 
