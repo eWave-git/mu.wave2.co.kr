@@ -2,11 +2,11 @@
 include_once "../connect.php";
 
 $query = "
-   select 
+   select
        DATE_FORMAT(create_at, '%m-%d ') as DATE,
        (max(data3)-ifnull( LAG(max(data3)) OVER (ORDER BY create_at, idx), 0))*10 as data3
         from water.raw_data
-        where create_at >= now() - INTERVAL 5 day 
+        where create_at >= now() - INTERVAL 5 day
 			and address=101 and board_type=3 and board_number=3
         group by DATE
         order by DATE asc
