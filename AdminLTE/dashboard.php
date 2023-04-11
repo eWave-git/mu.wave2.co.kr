@@ -7,11 +7,11 @@
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
 
-    $sql3 = "select * from mush.raw_data where address = 301 and board_number=2 order by create_at desc limit 1";
+    $sql3 = "select * from mush.raw_data where address = 401 and board_number=2 order by create_at desc limit 1";
     $result3 = mysqli_query($conn, $sql3);
     $row3 = mysqli_fetch_array($result3);
 
-    $sql4 = "select * from mush.raw_data where address = 301 and board_number=3 order by create_at desc limit 1";
+    $sql4 = "select * from mush.raw_data where address = 401 and board_number=3 order by create_at desc limit 1";
     $result4 = mysqli_query($conn, $sql4);
     $row4 = mysqli_fetch_array($result4);
 
