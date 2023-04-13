@@ -23,6 +23,25 @@ function createdTable_1($rows, $field_1, $field_2) {
     }
     echo "</table>";
 }
+function createdTable_2($rows, $field_1, $field_2, $field_3, $field_4, $field_5, $field_6, $field_7, $field_8) { // 선혁 만들어보고 있음
+    echo "<table>";
+    echo "<tr><td>{$field_1}</td><td>{$field_2}</td></tr>{$field_3}</td></tr>{$field_4}</td></tr>{$field_5}</td></tr>{$field_6}</td></tr>{$field_7}</td></tr>{$field_8}</td></tr>";
+    foreach ($rows as $k => $v) {
+        ?>
+        <tr>
+            <td><?php echo substr( $v[$field_1],0,16)?></td>
+            <td><?php echo round($v[$field_2],2)?></td>
+            <td><?php echo round($v[$field_3],2)?></td>
+            <td><?php echo round($v[$field_4],2)?></td>
+            <td><?php echo round($v[$field_5],2)?></td>
+            <td><?php echo round($v[$field_6],2)?></td>
+            <td><?php echo round($v[$field_7],2)?></td>
+            <td><?php echo round($v[$field_8],2)?></td>
+        </tr>
+        <?php
+    }
+    echo "</table>";
+}
 
 if ($md_id && $sensor && $sdateAtedate) {
 
@@ -37,14 +56,20 @@ if ($md_id && $sensor && $sdateAtedate) {
     $sdate = $s[0]." 00:00:00";
     $edate = $s[1]." 23:59:59";
 
-    if ($sensor == "TDSIN") {
+    if ($sensor == "dataAll") {
         $query = "
         select
-            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
-            avg(data1) as data1
+            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i') as DATE,
+            address as address,
+            board_type as type,
+            board_number as num,
+            data1 as temp,
+            data2 as hu,
+            data3 as co2,
+            data4 as data4
         from raw_data
         where create_at >= '{$sdate}' and create_at <= '{$edate}'
-        group by DAY(create_at),FLOOR(MINUTE(create_at)/1)*10
+        
         order by DATE asc
     ";
 
@@ -53,7 +78,27 @@ if ($md_id && $sensor && $sdateAtedate) {
         while($row = mysqli_fetch_array($result))
             $rows[] = $row;
 
-        createdTable_1($rows, 'data1','DATE');
+        createdTable_2($rows, 'DATE', 'address','type','num','data1','data2','data3','data4',);
+
+
+
+    } else if ($sensor == "data1") {
+        $query = "
+        select
+            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i') as DATE,
+            data1 as data1
+        from raw_data
+        where create_at >= '{$sdate}' and create_at <= '{$edate}'
+        
+        order by DATE asc
+    ";
+
+        $result = mysqli_query($conn, $query);
+        $rows = array();
+        while($row = mysqli_fetch_array($result))
+            $rows[] = $row;
+
+        createdTable_1($rows, 'DATE', 'data1',);
 
 
     } else if ($sensor == "TDSOUT") {

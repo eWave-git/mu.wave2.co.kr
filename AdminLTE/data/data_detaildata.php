@@ -9,26 +9,28 @@
                 <!-- About Me Box -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">검색 조건</h3>
+                        <h3 class="card-title">조건</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="form-group">
 
-                            <label for="exampleInputEmail1">md_id</label>
+                            <label for="exampleInputEmail1">농장명</label>
                             <select class="custom-select rounded-0" id="md_id" name="md_id">
                                 <option value="">선택하세요.</option>
-                                <option value="7000">두람농장</option>
+                                <option value="301">송화</option>
+                                <option value="401">표고</option>
+                                <option value="501">새송이</option>
                             </select>
                         </div>
 
                         <hr>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">센서</label>
+                            <label for="exampleInputEmail1">센서</label>
                             <select class="custom-select rounded-0" id="sensor" name="sensor">
                                 <option value="">선택하세요.</option>
-                                <option value="TDSIN">TDS IN</option>
+                                <option value="data1">온도</option>
                                 <option value="TDSOUT">TDS OUT</option>
                                 <option value="PRESSUREIN">압력 IN</option>
                                 <option value="PRESSUREOUT">압력 OUT</option>
@@ -42,7 +44,7 @@
                         <hr>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">날짜</label>
+                            <label for="exampleInputEmail1">날짜</label>
                             <div class="input-group">
                                 <input type="text" class="form-control float-right" id="reservationtime" name="sdateAtedate">
                             </div>

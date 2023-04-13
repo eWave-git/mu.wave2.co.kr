@@ -22,20 +22,21 @@ include_once "../connect.php";
                         <div class="card-body">
                             <div class="form-group">
 
-                                <label for="exampleInputEmail1">md_id</label>
+                                <label for="exampleInputEmail1">농장명</label>
                                 <select class="custom-select rounded-0" id="md_id" name="md_id">
                                     <option value="">선택하세요.</option>
-                                    <option value="7000">두람농장</option>
+                                    <option value="301">송화</option>
+                                    <option value="9999">전체</option>
                                 </select>
                             </div>
 
                             <hr>
 
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">센서</label>
+                                <label for="exampleInputEmail1">센서</label>
                                 <select class="custom-select rounded-0" id="sensor" name="sensor">
                                     <option value="">선택하세요.</option>
-                                    <option value="TDSIN">TDS IN</option>
+                                    <option value="data1">온도</option>
                                     <option value="TDSOUT">TDS OUT</option>
                                     <option value="PRESSUREIN">압력 IN</option>
                                     <option value="PRESSUREOUT">압력 OUT</option>
@@ -43,13 +44,14 @@ include_once "../connect.php";
                                     <option value="WATEROUT">유량 OUT</option>
                                     <option value="THROUGHPUT">수처리량</option>
                                     <option value="POWER">전력사용량</option>
+                                    <option value="dataAll">전체</option>
                                 </select>
                             </div>
 
                             <hr>
 
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">날짜</label>
+                                <label for="exampleInputEmail1">날짜</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control float-right" id="reservationtime" name="sdateAtedate">
                                 </div>

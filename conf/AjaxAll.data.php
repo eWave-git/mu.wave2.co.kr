@@ -25,7 +25,6 @@ if ($sensor == "TDSIN") {
             avg(tds_in) as tds_in
         from ro_jstech
         where create_at >= '{$sdate}' and create_at <= '{$edate}'
-        group by DAY(create_at),FLOOR(MINUTE(create_at)/1)*10
         order by DATE asc
     ";
 
