@@ -9,18 +9,18 @@
                 <!-- About Me Box -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">조건</h3>
+                        <h3 class="card-title">검색 조건</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="form-group">
 
-                            <label for="exampleInputEmail1">농장명</label>
+                            <label for="exampleInputEmail1">장소 선택</label>
                             <select class="custom-select rounded-0" id="md_id" name="md_id">
                                 <option value="">선택하세요.</option>
                                 <option value="301">송화</option>
                                 <option value="401">표고</option>
-                                <option value="501">새송이</option>
+                                <option value="101">매일</option>
                             </select>
                         </div>
 
@@ -31,13 +31,13 @@
                             <select class="custom-select rounded-0" id="sensor" name="sensor">
                                 <option value="">선택하세요.</option>
                                 <option value="data1">온도</option>
-                                <option value="TDSOUT">TDS OUT</option>
-                                <option value="PRESSUREIN">압력 IN</option>
-                                <option value="PRESSUREOUT">압력 OUT</option>
-                                <option value="WATERIN">유량 IN</option>
-                                <option value="WATEROUT">유량 OUT</option>
-                                <option value="THROUGHPUT">수처리량</option>
-                                <option value="POWER">전력사용량</option>
+                                <option value="data2">습도</option>
+                                <option value="data3">co2</option>
+                                <option value="data4">조도</option>
+                                <option value="data1">-</option>
+                                <option value="data1">-</option>
+                                <option value="data1">-</option>
+                                <option value="bar1">bar1</option>
                             </select>
                         </div>
 
@@ -62,7 +62,7 @@
             <div class="col-md-10 ">
                 <div class="card">
                     <div class="card-body">
-                        <div id="_chart" style="height: 900px;"></div>
+                        <div id="_chart" style="height: 700px;"></div>
                     </div><!-- /.card-body -->
                 </div>
                 <!-- /.card -->
@@ -85,17 +85,17 @@
         $("#search").click(function () {
 
             if ($("#md_id").val() == "") {
-                alert("md_id를 입력하세요.");
+                alert("장소 선택 필요");
                 return false;
             }
 
             if ($("#sensor").val() == "") {
-                alert("센서를 선택하세요.");
+                alert("센서 선택 필요");
                 return false;
             }
 
             if ($("#reservationtime").val() == "") {
-                alert("날짜를 선택하세요.");
+                alert("날짜 선택 필요");
                 return false;
             }
 
@@ -106,11 +106,11 @@
                 data: {md_id:$("[name='md_id']").val(), sensor:$("[name='sensor']").val(), sdateAtedate:$("[name='sdateAtedate']").val()},
                 dataType: 'json',
                 success: function (data) {
-                    if (data.pay_load.datatype == "power") {
-                        // alert("1"+data.pay_load.datatype);
+                    if (data.pay_load.datatype == "bar1") {
+                        alert("1"+data.pay_load.datatype);
                         update_type_2(data,data.pay_load.datatype)
                     } else {
-                        // alert("2"+data.pay_load.datatype);
+                        alert("2"+data.pay_load.datatype);
                         update_type_1(data,data.pay_load.datatype)
                     }
 
@@ -137,7 +137,7 @@
                         show: true
                     },
                     points    : {
-                        show: true
+                        show: false
                     }
                 },
                 lines : {

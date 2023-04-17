@@ -6,8 +6,8 @@ foreach ($_REQUEST as $k => $v) {
 }
 
 $s = explode(" - ",$sdateAtedate );
-$sdate = $s[0]." 00:00:00";
-$edate = $s[1]." 23:59:59";
+$sdate = $s[0]." 00:00";
+$edate = $s[1]." 23:59";
 
 //"TDSIN"
 //"TDSOUT"
@@ -18,13 +18,14 @@ $edate = $s[1]." 23:59:59";
 //"THROUGHPUT"
 //"POWER"
 
-if ($sensor == "TDSIN") {
+if ($sensor == "data1") {
     $query = "
         select
-            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
-            avg(tds_in) as tds_in
-        from ro_jstech
-        where create_at >= '{$sdate}' and create_at <= '{$edate}'
+            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i') as DATE,
+            data1
+        from water.raw_data
+        where create_at >= '{$sdate}' and create_at <= '{$edate}' 
+            and board_number =2 
         order by DATE asc
     ";
 
@@ -37,7 +38,7 @@ if ($sensor == "TDSIN") {
     $create_at_arr = array();
 
     foreach ($rows as $k => $v) {
-        array_push($tds_in_arr, array($k, floor($v['tds_in'])));
+        array_push($tds_in_arr, array($k, floor($v['data1'])));
         array_push($create_at_arr, array($k, substr($v['DATE'],0,16)));
     }
 
@@ -54,14 +55,14 @@ if ($sensor == "TDSIN") {
 
     echo json_encode($response);
 
-} else if ($sensor == "TDSOUT") {
+} else if ($sensor == "data2") {
     $query = "
         select
-            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
-            avg(tds_out) as tds_out
-        from ro_jstech
-        where create_at >= '{$sdate}' and create_at <= '{$edate}'
-        group by DAY(create_at),FLOOR(MINUTE(create_at)/1)*10
+            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i') as DATE,
+            data2
+        from water.raw_data
+        where create_at >= '{$sdate}' and create_at <= '{$edate}' 
+            and board_number = 2 
         order by DATE asc
     ";
 
@@ -74,7 +75,7 @@ if ($sensor == "TDSIN") {
     $create_at_arr = array();
 
     foreach ($rows as $k => $v) {
-        array_push($tds_out_arr, array($k, floor($v['tds_out'])));
+        array_push($tds_out_arr, array($k, floor($v['data2'])));
         array_push($create_at_arr, array($k, substr($v['DATE'],0,16)));
     }
 
@@ -91,14 +92,14 @@ if ($sensor == "TDSIN") {
 
     echo json_encode($response);
 
-} else if ($sensor == "PRESSUREIN") {
+} else if ($sensor == "data3") {
     $query = "
         select
             DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
-            avg(pressure_in) as pressure_in
-        from ro_jstech
-        where create_at >= '{$sdate}' and create_at <= '{$edate}'
-        group by DAY(create_at),FLOOR(MINUTE(create_at)/1)*10
+            data3
+        from water.raw_data
+        where create_at >= '{$sdate}' and create_at <= '{$edate}' 
+            and board_number = 2 
         order by DATE asc
     ";
     $result = mysqli_query($conn, $query);
@@ -111,7 +112,7 @@ if ($sensor == "TDSIN") {
     $create_at_arr = array();
 
     foreach ($rows as $k => $v) {
-        array_push($pressure_in_arr, array($k, floor($v['pressure_in'])));
+        array_push($pressure_in_arr, array($k, floor($v['data3'])));
         array_push($create_at_arr, array($k, substr($v['DATE'],0,16)));
     }
 
@@ -281,14 +282,14 @@ if ($sensor == "TDSIN") {
 
     echo json_encode($response);
 
-} else if ($sensor == "POWER") {
+} else if ($sensor == "bar1") {
 
     $query = "
         select
             DATE_FORMAT(create_at, '%Y-%m-%d') as DATE,
-            round(sum(current*380/1000),0) as power
-        FROM ro_jstech
-        where create_at >= '{$sdate}' and create_at <= '{$edate}'
+            round(max(data1,1) as power
+        FROM water.raw_data
+        where create_at >= '{$sdate}' and create_at <= '{$edate}' and board_number = 2
         group by DATE
         order by DATE asc;
     ";

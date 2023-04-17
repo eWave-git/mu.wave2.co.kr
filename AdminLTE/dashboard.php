@@ -241,7 +241,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="TDS_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_1" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="pressure_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_2" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -291,7 +291,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="water_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_3" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -315,7 +315,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="throughput_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_4" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +327,7 @@
                                             <div class="card-header">
                                                 <h3 class="card-title">
                                                     <i class="far fa-chart-bar"></i>
-                                                    전력사용량 기간별 (W)
+                                                    일간 최대 온도 (°C)
                                                 </h3>
 
                                                 <div class="card-tools">
@@ -340,7 +340,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="power_chart" style="height: 300px;"></div>
+                                                <div id="bar_chart_1" style="height: 300px;"></div>
                                             </div>
                                             <!-- /.card-body-->
                                         </div>
@@ -366,7 +366,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="watertank_chart" style="height: 300px;"></div>
+                                                <div id="bar_chart_2" style="height: 300px;"></div>
                                             </div>
                                             <!-- /.card-body-->
                                         </div>
@@ -386,7 +386,7 @@
                                             <div class="card-header">
                                                 <h3 class="card-title">
                                                     <i class="far fa-chart-bar"></i>
-
+                                                    온도 변화량 (°C)
                                                 </h3>
 
                                                 <div class="card-tools">
@@ -399,7 +399,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-
+                                                <div id="Line_Chart_1" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -854,16 +854,16 @@
             });
         });
 
-        GetTDSData()
+        Get_Line_Chart_1_Data()
 
         // 데이터 불러오기
-        function GetTDSData() {
+        function Get_Line_Chart_1_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxTDS.data.php",
+                url: "../conf/Ajax_Line_Chart_1.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    TDSupdate(data)
+                    _Line_Chart_1_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -872,10 +872,10 @@
         }
 
         // 데이터 바인딩 ( 데이터 갖고온것을 차트구조에 맡게 설정 및 html에 뿌려주기 )
-        function TDSupdate(_data) {
+        function _Line_Chart_1_update(_data) {
             const dataset = _data.pay_load.dataset
             
-            $.plot('#TDS_chart', [dataset['tds_in'],dataset['tds_out']], {
+            $.plot('#Line_Chart_1', [dataset['tds_in'],dataset['tds_out']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -907,15 +907,15 @@
         }
 
 
-        GetPressureData()
+        Get_Line_Chart_2_Data()
 
-        function GetPressureData() {
+        function Get_Line_Chart_2_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxPressure.data.php",
+                url: "../conf/Ajax_Line_Chart_2_.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Pressureupdate(data)
+                    _Line_Chart_2_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -923,10 +923,10 @@
             });
         }
 
-        function Pressureupdate(_data) {
+        function _Line_Chart_2_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#pressure_chart', [dataset['pressure_in'],dataset['pressure_out']], {
+            $.plot('#Line_Chart_2', [dataset['pressure_in'],dataset['pressure_out']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -957,15 +957,15 @@
             })
         }
 
-        GetWaterData()
+        Get_Line_Chart_3_Data()
 
-        function GetWaterData() {
+        function Get_Line_Chart_3_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxWater.data.php",
+                url: "../conf/Ajax_Line_Chart_3_.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Waterupdate(data)
+                    _Line_Chart_3_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -973,10 +973,10 @@
             });
         }
 
-        function Waterupdate(_data) {
+        function _Line_Chart_3_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#water_chart', [dataset['water_in'],dataset['water_out']], {
+            $.plot('#Line_Chart_3', [dataset['water_in'],dataset['water_out']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -1007,15 +1007,15 @@
             })
         }
 
-        GetThroughputData()
+        Get_Line_Chart_4_Data()
 
-        function GetThroughputData() {
+        function Get_Line_Chart_4_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxThroughput.data.php",
+                url: "../conf/Ajax_Line_Chart_4_.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Throughputupdate(data)
+                    _Line_Chart_4_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -1023,10 +1023,10 @@
             });
         }
 
-        function Throughputupdate(_data) {
+        function _Line_Chart_4_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#throughput_chart', [dataset['throughput']], {
+            $.plot('#Line_Chart_4', [dataset['throughput']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -1057,15 +1057,15 @@
             })
         }
 
-        GetPowerData()
+        Get_bar_chart_1_Data()
 
-        function GetPowerData() {
+        function Get_bar_chart_1_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxPower.data.php",
+                url: "../conf/Ajax_bar_chart_1_.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Powerupdate(data)
+                    _bar_chart_1_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -1073,10 +1073,10 @@
             });
         }
 
-        function Powerupdate(_data) {
+        function _bar_chart_1_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#power_chart', [dataset['power']], {
+            $.plot('#bar_chart_1', [dataset['power']], {
                 grid  : {
                     borderWidth: 1,
                     borderColor: '#f3f3f3',
@@ -1094,15 +1094,15 @@
             })
         }
 
-        GetWaterTankData()
+        Get_bar_chart_2_Data()
 
-        function GetWaterTankData() {
+        function Get_bar_chart_2_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxWaterTank.data.php",
+                url: "../conf/Ajax_bar_chart_2_.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    GetWaterTankupdate(data)
+                    _bar_chart_2_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -1110,10 +1110,10 @@
             });
         }
 
-        function GetWaterTankupdate(_data) {
+        function _bar_chart_2_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#watertank_chart', [dataset['watertank']], {
+            $.plot('#bar_chart_2', [dataset['watertank']], {
                 grid  : {
                     borderWidth: 1,
                     borderColor: '#f3f3f3',

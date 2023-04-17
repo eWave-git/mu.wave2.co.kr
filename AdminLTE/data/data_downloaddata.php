@@ -25,7 +25,7 @@ include_once "../connect.php";
                                 <label for="exampleInputEmail1">농장명</label>
                                 <select class="custom-select rounded-0" id="md_id" name="md_id">
                                     <option value="">선택하세요.</option>
-                                    <option value="301">송화</option>
+                                    <option value="101">송화</option>
                                     <option value="9999">전체</option>
                                 </select>
                             </div>
@@ -59,7 +59,7 @@ include_once "../connect.php";
 
                             <hr>
 
-                            <button type="submit" class="btn btn-block bg-gradient-primary" id="search">검색</button>
+                            <button type="submit" class="btn btn-block bg-gradient-primary" id="search">CSV 다운로드</button>
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -69,7 +69,7 @@ include_once "../connect.php";
                 <div class="col-md-10 ">
                     <div class="card">
                         <div class="card-body">
-                            <div id="_chart" style="height: 900px;"></div>
+                            <div id="_chart" style="height: 700px;"></div>
                         </div><!-- /.card-body -->
                     </div>
                     <!-- /.card -->
@@ -95,17 +95,17 @@ include_once "../connect.php";
         $("#search").click(function () {
 
             if ($("#md_id").val() == "") {
-                alert("md_id를 입력하세요.");
+                alert("장소 선택 필요");
                 return false;
             }
 
             if ($("#sensor").val() == "") {
-                alert("센서를 선택하세요.");
+                alert("센서 선택 필요");
                 return false;
             }
 
             if ($("#reservationtime").val() == "") {
-                alert("날짜를 선택하세요.");
+                alert("날짜 선택 필요");
                 return false;
             }
 

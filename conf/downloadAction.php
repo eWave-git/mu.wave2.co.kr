@@ -17,7 +17,7 @@ function createdTable_1($rows, $field_1, $field_2) {
     foreach ($rows as $k => $v) {
         ?>
         <tr>
-            <td><?php echo round($v[$field_1],2)?></td><td><?php echo substr( $v[$field_2],0,16)?></td>
+            <td><?php echo substr( $v[$field_1],0,16)?></td><td><?php echo round($v[$field_2],2)?></td>
         </tr>
         <?php
     }
@@ -47,9 +47,9 @@ if ($md_id && $sensor && $sdateAtedate) {
 
     $file_name = $sensor."_excel.xls";
 
-//    header( "Content-type: application/vnd.ms-excel; charset=utf-8");
-//  header( "Content-Disposition: attachment; filename = $file_name" );     //filename = 저장되는 파일명을 설정합니다.
-//    header( "Content-Description: PHP4 Generated Data" );
+    header( "Content-type: application/vnd.ms-excel; charset=utf-8");     // 아래 3줄을 주석 처리하면 화면에 데이터를 뿌려줌
+    header( "Content-Disposition: attachment; filename = $file_name" );     //filename = 저장되는 파일명을 설정합니다.
+    header( "Content-Description: PHP4 Generated Data" );
 
 
     $s = explode(" - ",$sdateAtedate );
@@ -69,7 +69,7 @@ if ($md_id && $sensor && $sdateAtedate) {
             data4 as data4
         from raw_data
         where create_at >= '{$sdate}' and create_at <= '{$edate}'
-        
+        and board_number=2
         order by DATE asc
     ";
 
@@ -78,17 +78,18 @@ if ($md_id && $sensor && $sdateAtedate) {
         while($row = mysqli_fetch_array($result))
             $rows[] = $row;
 
-        createdTable_2($rows, 'DATE', 'address','type','num','data1','data2','data3','data4',);
+        createdTable_2($rows, 'DATE', 'address','type','num','data1','data2','data3','data4');
 
 
 
     } else if ($sensor == "data1") {
         $query = "
         select
-            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i') as DATE,
-            data1 as data1
-        from raw_data
+            DATE_FORMAT(create_at, '%Y-%m-%d %H:%i:00') as DATE,
+            data1
+        from water.raw_data 
         where create_at >= '{$sdate}' and create_at <= '{$edate}'
+        and board_number = 2
         
         order by DATE asc
     ";
