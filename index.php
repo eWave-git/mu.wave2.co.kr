@@ -1,3 +1,10 @@
+<?php
+session_start();
+include_once "./lib/common.php";
+include_once "connect.php";
+
+include_once "conf/autoLogin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +51,12 @@
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
                         </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="customCheckbox1" name="autologin" value="Y">
+                        <label for="customCheckbox1" class="custom-control-label">자동로그인</label>
                     </div>
                 </div>
                 <div class="row">

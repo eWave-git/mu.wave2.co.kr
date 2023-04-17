@@ -4,6 +4,7 @@ include_once "../connect.php";
 
 $username = $_POST['user_id'];
 $password = $_POST['user_pw'];
+$autologin = isset($_POST['autologin'] ) ? 'Y' : 'N';
 
 $sql = "SELECT CONCAT('*', UPPER(SHA1(UNHEX(SHA1('{$password}'))))) as pass";
 $result = mysqli_query($conn, $sql);
@@ -18,6 +19,10 @@ if (mysqli_num_rows($query) == 1) {
     $_SESSION['user_id'] = $row['id'];
     $_SESSION['user_name'] = $row['name'];
     $_SESSION['user_type'] = $row['type'];
+
+    if ($autologin == "Y") {
+        setcookie("cookie_id",$row['id'],(time()+3600*24*30),"/"); // 한달간 자동로그인 유지
+    }
 
     header("Location:../AdminLTE/");
 

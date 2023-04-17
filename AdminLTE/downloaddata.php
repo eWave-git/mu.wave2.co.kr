@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+include_once "../lib/common.php";
+include_once "../conf/loginCheck.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php  include_once "../connect.php"; ?>
