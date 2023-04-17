@@ -8,22 +8,22 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <h3 class="card-title">사용자 관리 페이지</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
-                            Create Member
+                            사용자 생성
                         </button>
                         <br/><br/>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th>No</th>
+                                <th>순번</th>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Create Date</th>
-                                <th>Action</th>
+                                <th>사용자명</th>
+                                <th>생성날짜</th>
+                                <th>수정/삭제</th>
                             </tr>
                             </thead>
 
@@ -49,6 +49,7 @@
                             ?>
                             </tbody>
                             <tfoot>
+                            <!--    
                             <tr>
                                 <th>No</th>
                                 <th>ID</th>
@@ -56,6 +57,7 @@
                                 <th>Create Date</th>
                                 <th>Action</th>
                             </tr>
+                            -->
                             </tfoot>
                         </table>
                     </div>
@@ -76,7 +78,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Large Modal</h4>
+                <h4 class="modal-title">사용자 추가</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -86,35 +88,35 @@
                     <input type="hidden" name="mode" value="create">
                     <input type="hidden" name="idx" value="">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">ID</label>
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">ID설정</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="id" name="id">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">사용자명</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" name="name">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">암호설정</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Type</label>
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">사용자 타입</label>
                         <div class="col-sm-10">
 <!--                            <input type="text" class="form-control" id="type" name="type">-->
                             <select class="custom-select rounded-0" id="type" name="type">
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
+                                <option value="admin">관리자</option>
+                                <option value="user">사용자</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">추가 설명</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="description"></textarea>
                         </div>
@@ -122,8 +124,8 @@
                 </form>
             </div>
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" name="save">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" name="save">저장하기</button>
             </div>
         </div>
         <!-- /.modal-content -->

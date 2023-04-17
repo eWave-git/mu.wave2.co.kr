@@ -780,6 +780,9 @@
 
 
     </div><!-- /.container-fluid -->
+
+    
+    
 </section>
 <script src="plugins/jquery/jquery.min.js"></script>
 
@@ -853,6 +856,7 @@
 
         GetTDSData()
 
+        // 데이터 불러오기
         function GetTDSData() {
             $.ajaxSetup({ cache: false });
             $.ajax({
@@ -867,9 +871,10 @@
             });
         }
 
+        // 데이터 바인딩 ( 데이터 갖고온것을 차트구조에 맡게 설정 및 html에 뿌려주기 )
         function TDSupdate(_data) {
             const dataset = _data.pay_load.dataset
-
+            
             $.plot('#TDS_chart', [dataset['tds_in'],dataset['tds_out']], {
                 grid  : {
                     hoverable  : true,

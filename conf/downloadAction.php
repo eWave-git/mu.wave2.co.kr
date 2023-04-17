@@ -47,9 +47,9 @@ if ($md_id && $sensor && $sdateAtedate) {
 
     $file_name = $sensor."_excel.xls";
 
-    header( "Content-type: application/vnd.ms-excel; charset=utf-8");
-    header( "Content-Disposition: attachment; filename = $file_name" );     //filename = 저장되는 파일명을 설정합니다.
-    header( "Content-Description: PHP4 Generated Data" );
+//    header( "Content-type: application/vnd.ms-excel; charset=utf-8");
+//  header( "Content-Disposition: attachment; filename = $file_name" );     //filename = 저장되는 파일명을 설정합니다.
+//    header( "Content-Description: PHP4 Generated Data" );
 
 
     $s = explode(" - ",$sdateAtedate );
