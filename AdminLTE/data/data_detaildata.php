@@ -107,10 +107,10 @@
                 dataType: 'json',
                 success: function (data) {
                     if (data.pay_load.datatype == "bar1") {
-                        alert("1"+data.pay_load.datatype);
+
                         update_type_2(data,data.pay_load.datatype)
                     } else {
-                        alert("2"+data.pay_load.datatype);
+
                         update_type_1(data,data.pay_load.datatype)
                     }
 
