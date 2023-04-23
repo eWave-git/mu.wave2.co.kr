@@ -4,7 +4,7 @@ include_once "../connect.php";
 $query = "
     select
         DATE_FORMAT(create_at, '%m-%d %H:%i') as DATE,
-        data1
+        data3
     from mush.raw_data
     where
         address = 301 and board_number = 3  and
