@@ -1,14 +1,13 @@
 <?php
-$sql = "select * from mush.raw_data where address = 991 and board_number=2 order by create_at desc limit 1";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result);
+    $sql1 = "select * from mush.raw_data where address = 301 and board_number=2 order by create_at desc limit 1";
+    $result1 = mysqli_query($conn, $sql1);
+    $row1 = mysqli_fetch_array($result1);
 
-$sql2 = "select * from mush.raw_data where address = 991 and board_number=3 order by create_at desc limit 1";
-$result2 = mysqli_query($conn, $sql2);
-$row2 = mysqli_fetch_array($result2);
+    $sql2 = "select * from mush.raw_data where address = 301 and board_number=3 order by create_at desc limit 1";
+    $result2 = mysqli_query($conn, $sql2);
+    $row2 = mysqli_fetch_array($result2);
 
-
-//    echo $row['tds_in'];
+//    echo $row['data1'];
 //    echo $row['tds_out'];
 //    echo $row['pressure_in'];
 //    echo $row['pressure_out'];
@@ -17,21 +16,21 @@ $row2 = mysqli_fetch_array($result2);
 <section class="content">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        address = 991 and board_number = 2
+        송화버섯 농장 
         <div class="row">
             <div class="col-lg-3 col-12">
                 <div class="info-box bg-info">
-                    <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
+<!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
                     <div class="info-box-content">
                         <span class="info-box-text">온도</span>
-                        <span class="info-box-number"><?php echo $row['data1'];?> °C</span>
+                        <span class="info-box-number"><?php echo $row1['data1'];?> °C</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data1'];?>%"></div>
+                            <div class="progress-bar" style="width: <?php echo $row1['data1'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?> <!-- ($row['create_at'],11,8) -->
+                            조회 시점 : <?php echo substr($row1['create_at'],5,11);?> <!-- ($row['create_at'],11,8) -->
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -40,17 +39,17 @@ $row2 = mysqli_fetch_array($result2);
             <!-- ./col -->
             <div class="col-lg-3 col-12">
                 <div class="info-box bg-success">
-                    <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
+<!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
                     <div class="info-box-content">
                         <span class="info-box-text">습도</span>
-                        <span class="info-box-number"><?php echo $row['data2'];?> %</span>
+                        <span class="info-box-number"><?php echo $row1['data2'];?> %</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data2'];?>%"></div>
+                            <div class="progress-bar" style="width: <?php echo $row1['data2'];?>%"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row1['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -60,17 +59,17 @@ $row2 = mysqli_fetch_array($result2);
             <!-- ./col -->
             <div class="col-lg-3 col-12">
                 <div class="info-box bg-warning">
-                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+<!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
                         <span class="info-box-text">이산화탄소</span>
-                        <span class="info-box-number"><?php echo $row['data3'];?> ppm </span>
+                        <span class="info-box-number"><?php echo $row1['data3'];?> ppm </span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data3'];?> %"></div>
+                            <div class="progress-bar" style="width: <?php echo $row1['data3'];?> %"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row1['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -79,17 +78,17 @@ $row2 = mysqli_fetch_array($result2);
             <!-- ./col -->
             <div class="col-lg-3 col-12">
                 <div class="info-box bg-danger">
-                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+<!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
-                        <span class="info-box-text">조도</span>
-                        <span class="info-box-number"><?php echo $row['data4'];?> lux</span>
+                        <span class="info-box-text">PAR</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row['data4'];?>"></div>
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
                         </div>
                         <span class="progress-description">
-                            조회 시점 : <?php echo substr($row['create_at'],5,11);?>
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -101,87 +100,7 @@ $row2 = mysqli_fetch_array($result2);
         <!-- /.row -->
         <!-- Main row -->
 
-        address = 991 and board_number = 3
-        <div class="row">
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-info">
-                    <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">온도</span>
-                        <span class="info-box-number"><?php echo $row2['data1'];?> °C</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data1'];?>%"></div>
-                        </div>
-                        <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?> <!-- ($row2['create_at'],11,8) -->
-                        </span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-success">
-                    <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">습도</span>
-                        <span class="info-box-number"><?php echo $row2['data2'];?> %</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data2'];?>%"></div>
-                        </div>
-                        <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
-                        </span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-warning">
-                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">이산화탄소</span>
-                        <span class="info-box-number"><?php echo $row2['data3'];?> ppm </span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?> %"></div>
-                        </div>
-                        <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
-                        </span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-danger">
-                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">조도</span>
-                        <span class="info-box-number"><?php echo $row2['data4'];?> lux</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: <?php echo $row2['data4'];?>"></div>
-                        </div>
-                        <span class="progress-description">
-                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
-                        </span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-            </div>
-            <!-- ./col -->
-
-        </div>
+ 
         <!-- /.row -->
         <!-- Main row -->
 
@@ -196,21 +115,14 @@ $row2 = mysqli_fetch_array($result2);
                         <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
                             <li class="pt-2 px-3"><h3 class="card-title">section </h3></li>
                             <li class="nav-item">
-                                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">두람농장</a>
+                                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">송화버섯</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">-</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">-</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>
-                            </li>
+                           
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content" id="custom-tabs-two-tabContent">
+                            <!-- 송화버섯 -->
                             <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
 
                                 <div class="row">
@@ -220,7 +132,7 @@ $row2 = mysqli_fetch_array($result2);
                                             <div class="card-header">
                                                 <h3 class="card-title">
                                                     <i class="far fa-chart-bar"></i>
-                                                    온도 변화량 (°C)
+                                                     온도 변화량 (°C)
                                                 </h3>
 
                                                 <div class="card-tools">
@@ -233,7 +145,7 @@ $row2 = mysqli_fetch_array($result2);
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="TDS_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_1" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -257,7 +169,7 @@ $row2 = mysqli_fetch_array($result2);
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="pressure_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_2" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -283,7 +195,7 @@ $row2 = mysqli_fetch_array($result2);
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="water_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_3" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -294,7 +206,7 @@ $row2 = mysqli_fetch_array($result2);
                                             <div class="card-header">
                                                 <h3 class="card-title">
                                                     <i class="far fa-chart-bar"></i>
-                                                    조도 변화량 (lux)
+                                                    조도 변화량 (µmol/m^2/s)
                                                 </h3>
 
                                                 <div class="card-tools">
@@ -307,26 +219,14 @@ $row2 = mysqli_fetch_array($result2);
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <div id="throughput_chart" style="height: 300px;"></div>
+                                                <div id="Line_Chart_4" style="height: 300px;"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
 
 
-
-                            <div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
-
-                            </div>
-                            <div class="tab-pane fade" id="custom-tabs-two-messages" role="tabpanel" aria-labelledby="custom-tabs-two-messages-tab">
-
-                            </div>
-                            <div class="tab-pane fade" id="custom-tabs-two-settings" role="tabpanel" aria-labelledby="custom-tabs-two-settings-tab">
-
-                            </div>
                         </div>
                     </div>
                     <!-- /.card -->
@@ -337,54 +237,8 @@ $row2 = mysqli_fetch_array($result2);
         </div>
 
 
-        <!-- /.row (main row) -->
-        <?php
-        $sql = "select * from control_data where type='relay1' order by create_at desc limit 1";
-        $result = mysqli_query($conn, $sql);
-        $row1 = mysqli_fetch_array($result);
-
-        $relay1 = !$row1['relay1'] && "" ? 0 : $row1['relay1'];
-
-
-        if ($relay1 == 1) {
-            $do_str_1 = "작동중";
-            $do_css_1 = "bg-gradient-primary";
-            $do_checked_1 = "checked";
-        } else if ($relay1 == 0) {
-            $do_str_1 = "멈춤";
-            $do_css_1 = "bg-gradient-danger";
-            $do_checked_1 = "";
-        } else {
-            $do_str_1 = "멈춤";
-            $do_css_1 = "bg-gradient-danger";
-            $do_checked_1 = "";
-        }
-
-        $sql = "select * from control_data where type='relay2' order by create_at desc limit 1";
-        $result = mysqli_query($conn, $sql);
-        $row2 = mysqli_fetch_array($result);
-
-        $relay2 = !$row2['relay2'] && "" ? 0 : $row2['relay2'];
-
-
-        if ($relay2 == 1) {
-            $do_str_2 = "작동중";
-            $do_css_2 = "bg-gradient-primary";
-            $do_checked_2 = "checked";
-        } else if ($relay2 == 0) {
-            $do_str_2 = "멈춤";
-            $do_css_2 = "bg-gradient-danger";
-            $do_checked_2 = "";
-        } else {
-            $do_str_2 = "멈춤";
-            $do_css_2 = "bg-gradient-danger";
-            $do_checked_2 = "";
-        }
-        ?>
-
-
-
-    </div><!-- /.container-fluid -->
+    
+    
 </section>
 <script src="plugins/jquery/jquery.min.js"></script>
 
@@ -456,15 +310,16 @@ $row2 = mysqli_fetch_array($result2);
             });
         });
 
-        GetTDSData()
+        Get_Line_Chart_1_Data()
 
-        function GetTDSData() {
+        // 데이터 불러오기
+        function Get_Line_Chart_1_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxTDS.data.php",
+                url: "../conf/user1_Ajax_Line_Chart_1.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    TDSupdate(data)
+                    _Line_Chart_1_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -472,10 +327,11 @@ $row2 = mysqli_fetch_array($result2);
             });
         }
 
-        function TDSupdate(_data) {
+        // 데이터 바인딩 ( 데이터 갖고온것을 차트구조에 맡게 설정 및 html에 뿌려주기 )
+        function _Line_Chart_1_update(_data) {
             const dataset = _data.pay_load.dataset
-
-            $.plot('#TDS_chart', [dataset['tds_in'],dataset['tds_out']], {
+            
+            $.plot('#Line_Chart_1', [dataset['tds_in'],dataset['tds_out']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -507,15 +363,15 @@ $row2 = mysqli_fetch_array($result2);
         }
 
 
-        GetPressureData()
+        Get_Line_Chart_2_Data()
 
-        function GetPressureData() {
+        function Get_Line_Chart_2_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxPressure.data.php",
+                url: "../conf/user1_Ajax_Line_Chart_2.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Pressureupdate(data)
+                    _Line_Chart_2_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -523,10 +379,10 @@ $row2 = mysqli_fetch_array($result2);
             });
         }
 
-        function Pressureupdate(_data) {
+        function _Line_Chart_2_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#pressure_chart', [dataset['pressure_in'],dataset['pressure_out']], {
+            $.plot('#Line_Chart_2', [dataset['pressure_in'],dataset['pressure_out']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -557,15 +413,15 @@ $row2 = mysqli_fetch_array($result2);
             })
         }
 
-        GetWaterData()
+        Get_Line_Chart_3_Data()
 
-        function GetWaterData() {
+        function Get_Line_Chart_3_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxWater.data.php",
+                url: "../conf/user1_Ajax_Line_Chart_3.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Waterupdate(data)
+                    _Line_Chart_3_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -573,10 +429,10 @@ $row2 = mysqli_fetch_array($result2);
             });
         }
 
-        function Waterupdate(_data) {
+        function _Line_Chart_3_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#water_chart', [dataset['water_in'],dataset['water_out']], {
+            $.plot('#Line_Chart_3', [dataset['water_in'],dataset['water_out']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -607,15 +463,15 @@ $row2 = mysqli_fetch_array($result2);
             })
         }
 
-        GetThroughputData()
+        Get_Line_Chart_4_Data()
 
-        function GetThroughputData() {
+        function Get_Line_Chart_4_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/AjaxThroughput.data.php",
+                url: "../conf/user1_Ajax_Line_Chart_4.data.php",
                 dataType: 'json',
                 success: function (data) {
-                    Throughputupdate(data)
+                    _Line_Chart_4_update(data)
                 },
                 error: function () {
                     // setTimeout(GetData, updateInterval);
@@ -623,10 +479,10 @@ $row2 = mysqli_fetch_array($result2);
             });
         }
 
-        function Throughputupdate(_data) {
+        function _Line_Chart_4_update(_data) {
             const dataset = _data.pay_load.dataset
 
-            $.plot('#throughput_chart', [dataset['throughput']], {
+            $.plot('#Line_Chart_4', [dataset['throughput']], {
                 grid  : {
                     hoverable  : true,
                     borderColor: '#f3f3f3',
@@ -656,80 +512,5 @@ $row2 = mysqli_fetch_array($result2);
                 }
             })
         }
-
-        GetPowerData()
-
-        function GetPowerData() {
-            $.ajaxSetup({ cache: false });
-            $.ajax({
-                url: "../conf/AjaxPower.data.php",
-                dataType: 'json',
-                success: function (data) {
-                    Powerupdate(data)
-                },
-                error: function () {
-                    // setTimeout(GetData, updateInterval);
-                }
-            });
-        }
-
-        function Powerupdate(_data) {
-            const dataset = _data.pay_load.dataset
-
-            $.plot('#power_chart', [dataset['power']], {
-                grid  : {
-                    borderWidth: 1,
-                    borderColor: '#f3f3f3',
-                    tickColor  : '#f3f3f3'
-                },
-                series: {
-                    bars: {
-                        show: true, barWidth: 0.5, align: 'center',
-                    },
-                },
-                colors: ['#3c8dbc'],
-                xaxis : {
-                    ticks: _data.pay_load.create_at,
-                }
-            })
-        }
-
-        GetWaterTankData()
-
-        function GetWaterTankData() {
-            $.ajaxSetup({ cache: false });
-            $.ajax({
-                url: "../conf/AjaxWaterTank.data.php",
-                dataType: 'json',
-                success: function (data) {
-                    GetWaterTankupdate(data)
-                },
-                error: function () {
-                    // setTimeout(GetData, updateInterval);
-                }
-            });
-        }
-
-        function GetWaterTankupdate(_data) {
-            const dataset = _data.pay_load.dataset
-
-            $.plot('#watertank_chart', [dataset['watertank']], {
-                grid  : {
-                    borderWidth: 1,
-                    borderColor: '#f3f3f3',
-                    tickColor  : '#f3f3f3'
-                },
-                series: {
-                    bars: {
-                        show: true, barWidth: 0.5, align: 'center',
-                    },
-                },
-                colors: ['#3c8dbc'],
-                xaxis : {
-                    ticks: _data.pay_load.create_at,
-                }
-            })
-        }
-
     });
 </script>

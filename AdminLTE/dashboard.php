@@ -912,7 +912,7 @@
         function Get_Line_Chart_2_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/Ajax_Line_Chart_2_.data.php",
+                url: "../conf/Ajax_Line_Chart_2.data.php",
                 dataType: 'json',
                 success: function (data) {
                     _Line_Chart_2_update(data)
@@ -962,7 +962,7 @@
         function Get_Line_Chart_3_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/Ajax_Line_Chart_3_.data.php",
+                url: "../conf/Ajax_Line_Chart_3.data.php",
                 dataType: 'json',
                 success: function (data) {
                     _Line_Chart_3_update(data)
@@ -1012,7 +1012,7 @@
         function Get_Line_Chart_4_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/Ajax_Line_Chart_4_.data.php",
+                url: "../conf/Ajax_Line_Chart_4.data.php",
                 dataType: 'json',
                 success: function (data) {
                     _Line_Chart_4_update(data)

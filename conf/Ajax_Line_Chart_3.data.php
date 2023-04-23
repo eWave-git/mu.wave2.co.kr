@@ -8,7 +8,7 @@ $query = "
     from water.raw_data
     where
         address = 101 and board_number = 2 and    
-        create_at >= now() - INTERVAL 3 hour
+        create_at >= now() - INTERVAL 4 hour
     order by DATE asc;
     "; 
 //create_at >= now() - INTERVAL 30 minute
