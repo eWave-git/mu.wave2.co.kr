@@ -41,14 +41,15 @@ if ($bd_type != 1) {
 		$d1 = round($d1 / 65536 * 100,1); //지습도 센서
 		//$d2 = round(($d2 - 763) / 3332 * 14 , 1);
 		
-		if ($d2 < 763){
+		if ($d2 < 770){
 			$d2 = 0;
 		}
 		else {
 			$d2 = round(($d2 - 763) / 3335 * 2500 , 1); // 401,501 버섯농장 PAR센서
+
 		}
 
-		if ($d3 < 763){
+		if ($d3 < 770){
 			$d3 = 0;
 		} else {
 		$d3 = round(($d2 - 763) / 3335 * 4000 , 1); // 301 버섯농장 PAR센서
@@ -65,24 +66,24 @@ if ($bd_type != 1) {
 	$result = mysqli_query($conn, $sql);
 }
 
-$control_sql = "select * from mush.control_data where address = $address and board_type = $bd_type and board_number = $bd_number order by create_at desc limit 1 ";
+//$control_sql = "select * from mush.control_data where address = $address and board_type = $bd_type and board_number = $bd_number order by create_at desc limit 1 ";
 
-$result = mysqli_query($conn, $control_sql);
-$row = mysqli_fetch_array($result);
+//$result = mysqli_query($conn, $control_sql);
+//$row = mysqli_fetch_array($result);
 
-if ($row['idx']) {
+//if (isset($row['idx'])) {
 
-	$relay1 = $row['relay1'] == '' ? 0 : $row['relay1'];
-	$relay2 = $row['relay2'] == '' ? 0 : $row['relay2'];
+//	$relay1 = $row['relay1'] == '' ? 0 : $row['relay1'];
+//	$relay2 = $row['relay2'] == '' ? 0 : $row['relay2'];
 
 
-	$str = "X000Y".$relay1.$relay2."00#";
+//	$str = "X000Y".$relay1.$relay2."00#";
 
-	$textdata = "@".$time.$str;
+//	$textdata = "@".$time.$str;
 
-} else {
+//} else {
 	$textdata = "@".$time."X000Y0000#<br>";
-}
+//}
 
 
 echo $textdata;
