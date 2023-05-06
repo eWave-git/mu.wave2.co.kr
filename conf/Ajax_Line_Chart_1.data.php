@@ -4,11 +4,11 @@ include_once "../connect.php";
 $query = "
     select
         DATE_FORMAT(create_at, '%m-%d %H:%i') as DATE,
-        data1
+        data4
     from water.raw_data
     where
-        address = 101 and board_number = 2 and
-        create_at >= now() - INTERVAL 4 hour
+        address = 503 and board_number = 4 and
+        create_at >= now() - INTERVAL 12 hour
     order by DATE asc;
     ";
 //create_at >= now() - INTERVAL 30 minute
