@@ -8,7 +8,7 @@ $query = "
     from water.raw_data
     where
         address = 503 and board_number = 4 and
-        create_at >= now() - INTERVAL 12 hour
+        create_at >= now() - INTERVAL 24 hour
     order by DATE asc;
     ";
 //create_at >= now() - INTERVAL 30 minute
@@ -23,7 +23,7 @@ $tds_out_arr = array();
 $create_at_arr = array();
 
 foreach ($rows as $k => $v) {
-    array_push($tds_in_arr, array($k, $v['data1']));
+    array_push($tds_in_arr, array($k, $v['data4']));
     //array_push($tds_in_arr, array($k, floor($v['data1'])));
     //array_push($tds_out_arr, array($k, floor($v['tds_out'])));
     array_push($create_at_arr, array($k, substr($v['DATE'],6,5)));
