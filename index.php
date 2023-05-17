@@ -10,7 +10,7 @@ include_once "conf/autoLogin.php";
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Mushroom Monitoring | Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -32,9 +32,9 @@ include_once "conf/autoLogin.php";
     </div>
     <!-- /.login-logo -->
     <div class="card">
-        <div class="text-center"><img src="image/ewave_logo.gif"></div>
+        <div class="text-center"><img src="image/well_logo.gif"></div>
         <div class="card-body login-card-body">
-            <p class="login-box-msg">모니터링 시스템</p>
+            <p class="login-box-msg">버섯 모니터링 시스템</p>
 
             <form action="conf/loginAction.php" method="post">
                 <div class="input-group mb-3">
