@@ -24,7 +24,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="downloaddata.php" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "downloaddata.php") {echo 'active';} ?>  ">
+            <a href="#" class="nav-link  <?php if (basename($_SERVER["PHP_SELF"]) == "") {echo 'active';} ?>  ">
                 <i class="nav-icon far fa-address-card"></i>
                 <p>데이터 다운로드</p>
             </a>
