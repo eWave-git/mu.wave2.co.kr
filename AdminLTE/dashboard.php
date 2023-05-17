@@ -296,13 +296,16 @@
                                 <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">송화버섯</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a>
+                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a>
+                                <!-- <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a> -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>
+                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>
+                                <!--<a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>  -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>
+                                <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>
+                                <!--<a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>  -->
                             </li>
                         </ul>
                     </div>
