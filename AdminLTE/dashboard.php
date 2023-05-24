@@ -34,7 +34,7 @@
         <!-- Small boxes (Stat box) -->
         송화버섯 농장 
         <div class="row">
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-auto col-12">
                 <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
@@ -53,8 +53,8 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-success">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
                     <div class="info-box-content">
@@ -73,8 +73,8 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-warning">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
@@ -92,9 +92,87 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-danger">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
                         <span class="info-box-text">조도</span>
@@ -118,8 +196,8 @@
 
         표고버섯 농장
         <div class="row">
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-info">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
                     <div class="info-box-content">
@@ -137,7 +215,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-auto col-12">
                 <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
@@ -157,8 +235,8 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-warning">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
@@ -176,9 +254,49 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-danger">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row4['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row4['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row4['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row4['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row4['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row4['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
                         <span class="info-box-text">조도</span>
@@ -200,8 +318,8 @@
 
         새송이 농장
         <div class="row">
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-info">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
                     <div class="info-box-content">
@@ -219,8 +337,8 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-success">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
                     <div class="info-box-content">
@@ -239,7 +357,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-auto col-12">
                 <div class="info-box bg-warning">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
@@ -258,8 +376,8 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-danger">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
@@ -277,7 +395,63 @@
                 </div>
             </div>
             <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->
