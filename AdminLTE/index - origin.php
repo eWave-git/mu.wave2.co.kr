@@ -22,24 +22,10 @@ include_once "../conf/loginCheck.php";
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <?php 
-        if ($_SESSION['user_type'] == "admin") {
-            include_once "logo.php";
-        } else if ($_SESSION['user_id'] == "user1" ||$_SESSION['user_id'] == "user2" || $_SESSION['user_id'] == "user3") {
-            include_once "logo_w.php";
-        }
-        ?>
+        <?php include_once "logo.php" ?>
 
         <!-- Sidebar -->
-
-        <?php 
-        if ($_SESSION['user_type'] == "admin") {
-            include_once "sidebar.php";
-        } else if ($_SESSION['user_id'] == "user1" ||$_SESSION['user_id'] == "user2" || $_SESSION['user_id'] == "user3") {
-            include_once "sidebar_user.php";
-        }
-        ?>
-
+        <?php include_once "sidebar.php"; ?>
         <!-- /.sidebar -->
     </aside>
 

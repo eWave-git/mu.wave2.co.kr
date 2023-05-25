@@ -8,7 +8,7 @@ $date = date("Y-m-d");
 $time = date("His");
 $create_at = date("Y-m-d H:i:s");
 $from_ip = $_SERVER['REMOTE_ADDR'];
-$conn = mysqli_connect("database-1.cvdze1lptugg.ap-northeast-2.rds.amazonaws.com","wave2","crss6801!!","rich") or die ("Can't access DB");
+$conn = mysqli_connect("database-2.cvdze1lptugg.ap-northeast-2.rds.amazonaws.com","wave2","crss6801!!","rich") or die ("Can't access DB");
 
 $address = $add;
 

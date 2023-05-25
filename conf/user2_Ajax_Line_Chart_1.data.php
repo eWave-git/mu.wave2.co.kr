@@ -7,7 +7,7 @@ $query = "
         data1
     from mush.raw_data
     where
-        address = 301 and board_number = 2 and
+        address = 401 and board_number = 2 and
         create_at >= now() - INTERVAL 4 hour
     order by DATE asc;
     ";

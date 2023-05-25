@@ -15,6 +15,14 @@
     $result4 = mysqli_query($conn, $sql4);
     $row4 = mysqli_fetch_array($result4);
 
+    $sql5 = "select * from mush.raw_data where address = 501 and board_number=2 order by create_at desc limit 1";
+    $result5 = mysqli_query($conn, $sql5);
+    $row5 = mysqli_fetch_array($result5);
+
+    $sql6 = "select * from mush.raw_data where address = 501 and board_number=3 order by create_at desc limit 1";
+    $result6 = mysqli_query($conn, $sql6);
+    $row6 = mysqli_fetch_array($result6);
+
 //    echo $row['data1'];
 //    echo $row['tds_out'];
 //    echo $row['pressure_in'];
@@ -26,7 +34,7 @@
         <!-- Small boxes (Stat box) -->
         송화버섯 농장 
         <div class="row">
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-auto col-12">
                 <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
@@ -45,8 +53,8 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-success">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
                     <div class="info-box-content">
@@ -65,8 +73,8 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-warning">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
@@ -84,9 +92,87 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-danger">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row2['data3'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row2['data3'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row2['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-info">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
                         <span class="info-box-text">조도</span>
@@ -110,8 +196,8 @@
 
         표고버섯 농장
         <div class="row">
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-info">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
 
                     <div class="info-box-content">
@@ -129,7 +215,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-auto col-12">
                 <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
 
@@ -149,8 +235,8 @@
                 <!-- /.info-box -->
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-warning">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
@@ -168,12 +254,12 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-12">
-                <div class="info-box bg-danger">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
 <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
 
                     <div class="info-box-content">
-                        <span class="info-box-text">PAR</span>
+                        <span class="info-box-text">조도</span>
                         <span class="info-box-number"><?php echo $row4['data2'];?> µmol/m^2/s</span>
 
                         <div class="progress">
@@ -188,6 +274,184 @@
             </div>
             <!-- ./col -->
 
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row4['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row4['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row4['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-success">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row4['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row4['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row4['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+
+        </div>
+
+        새송이 농장
+        <div class="row">
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+<!--                    <span class="info-box-icon"><i class="far fa-bookmark"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">온도</span>
+                        <span class="info-box-number"><?php echo $row5['data1'];?> °C</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row5['data1'];?>%"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row5['create_at'],5,11);?> <!-- ($row2['create_at'],11,8) -->
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+<!--                    <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">습도</span>
+                        <span class="info-box-number"><?php echo $row5['data2'];?> %</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row5['data2'];?>%"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row5['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+<!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">이산화탄소</span>
+                        <span class="info-box-number"><?php echo $row5['data3'];?> ppm </span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row5['data3'];?> %"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row5['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+<!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-auto col-12">
+                <div class="info-box bg-warning">
+                    <!--                    <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>-->
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">조도</span>
+                        <span class="info-box-number"><?php echo $row6['data2'];?> µmol/m^2/s</span>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: <?php echo $row6['data4'];?>"></div>
+                        </div>
+                        <span class="progress-description">
+                            조회 시점 : <?php echo substr($row6['create_at'],5,11);?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </div>
+            <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->
@@ -206,13 +470,16 @@
                                 <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">송화버섯</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a>
+                                <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a>
+                                <!-- <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">표고버섯</a> -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>
+                                <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>
+                                <!--<a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">새송이버섯</a>  -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>
+                                <a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>
+                                <!--<a class="nav-link" id="custom-tabs-two-settings-tab" data-toggle="pill" href="#custom-tabs-two-settings" role="tab" aria-controls="custom-tabs-two-settings" aria-selected="false">-</a>  -->
                             </li>
                         </ul>
                     </div>
@@ -322,57 +589,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-6 col-sm-12">
-                                        <div class="card card-primary card-outline">
-                                            <div class="card-header">
-                                                <h3 class="card-title">
-                                                    <i class="far fa-chart-bar"></i>
-                                                    일간 최대 온도 (°C)
-                                                </h3>
-
-                                                <div class="card-tools">
-                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                        <i class="fas fa-minus"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                                        <i class="fas fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div id="bar_chart_1" style="height: 300px;"></div>
-                                            </div>
-                                            <!-- /.card-body-->
-                                        </div>
-                                        <!-- /.card -->
-                                    </div>
-
-                                    <div class="col-lg-6 col-sm-12">
-                                        <!-- BAR CHART -->
-                                        <div class="card card-primary card-outline">
-                                            <div class="card-header">
-                                                <h3 class="card-title">
-                                                    <i class="far fa-chart-bar"></i>
-                                                    물탱크 수위 (%)
-                                                </h3>
-
-                                                <div class="card-tools">
-                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                        <i class="fas fa-minus"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                                        <i class="fas fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div id="bar_chart_2" style="height: 300px;"></div>
-                                            </div>
-                                            <!-- /.card-body-->
-                                        </div>
-                                        <!-- /.card -->
-                                    </div>
-
+                                    
                                 </div>
                             </div>
 
@@ -912,7 +1129,7 @@
         function Get_Line_Chart_2_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/Ajax_Line_Chart_2_.data.php",
+                url: "../conf/Ajax_Line_Chart_2.data.php",
                 dataType: 'json',
                 success: function (data) {
                     _Line_Chart_2_update(data)
@@ -962,7 +1179,7 @@
         function Get_Line_Chart_3_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/Ajax_Line_Chart_3_.data.php",
+                url: "../conf/Ajax_Line_Chart_3.data.php",
                 dataType: 'json',
                 success: function (data) {
                     _Line_Chart_3_update(data)
@@ -1012,7 +1229,7 @@
         function Get_Line_Chart_4_Data() {
             $.ajaxSetup({ cache: false });
             $.ajax({
-                url: "../conf/Ajax_Line_Chart_4_.data.php",
+                url: "../conf/Ajax_Line_Chart_4.data.php",
                 dataType: 'json',
                 success: function (data) {
                     _Line_Chart_4_update(data)
