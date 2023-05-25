@@ -1108,6 +1108,10 @@
                         show: false
                     }
                 },
+                tooltip: {
+                  show:true,
+                  content: "온도 : %y"
+                },
                 lines : {
                     fill : false,
                     color: ['#3c8dbc', '#f56954']
