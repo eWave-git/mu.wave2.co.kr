@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['OLDPWD']) include_once $_SERVER['OLDPWD']."/connect.php";
+if ($_SERVER['PWD']) include_once $_SERVER['PWD']."/connect.php";
 if ($_SERVER['DOCUMENT_ROOT']) include_once $_SERVER['DOCUMENT_ROOT']."/connect.php";
 
 function error_loc_msg($loc,$msg,$target=null) {
